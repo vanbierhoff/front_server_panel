@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { TestService } from './serivce/test.service';
+import { Component, Inject } from '@angular/core';
+// import 'reflect-metadata';
+import { V_PERMISSIONS_SERVICE } from '@policy/services/permissions/models/tokens/permission-tokens';
+import { PermissionService } from '@policy/services/permissions/permissions.service';
 
 
 @Component({
@@ -7,14 +9,12 @@ import { TestService } from './serivce/test.service';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-    title = 'server_panel';
-
-    constructor(private test: TestService) {
+export class AppComponent {
+    constructor(
+        @Inject(V_PERMISSIONS_SERVICE) private permissions: PermissionService
+    ) {
     }
 
+    title = 'policy';
 
-    ngOnInit(): void {
-        this.test.get().subscribe(data => console.log(data));
-    }
 }
