@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+// import 'reflect-metadata';
+import { V_PERMISSIONS_SERVICE } from '@policy/services/permissions/models/tokens/permission-tokens';
+import { PermissionService } from '@policy/services/permissions/permissions.service';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'server_panel';
+    constructor(
+        @Inject(V_PERMISSIONS_SERVICE) private permissions: PermissionService
+    ) {
+    }
+
+    title = 'policy';
+
 }
