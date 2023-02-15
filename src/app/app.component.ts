@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 
+// import 'reflect-metadata';
+
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'server_panel';
+    title = 'policy';
+
 }

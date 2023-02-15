@@ -8,9 +8,11 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
+    "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "strictNullChecks": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -21,9 +23,20 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": [
-      "ES2022",
+      "ES2020",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@shared/*": [
+        "app/shared/*"
+      ],
+      "@policy/*": [
+        "projects/vlib/permissions/src/*"
+      ],
+      "permissions": [
+        "dist/permissions"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
